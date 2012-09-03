@@ -1,0 +1,279 @@
+/* Style designed by Robert.Erickson@uvm.edu */
+* {
+	color: #55616F;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	line-height: normal;
+  margin: 0;
+  padding: 0;	
+} 
+
+h1{
+	font-family: Verdana;
+	font-size: 16pt;
+}
+
+h2{
+	font-family: Verdana;
+	font-size: 14pt;
+	margin:0 0 1em;
+}
+
+h3{
+	font-family: Verdana;
+	font-size: 12pt;
+}
+
+h4,h5,h6{font-family: Verdana;}
+/*  */
+
+body,	html {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#a7a09a;
+}
+
+#wrapper {
+	width:960px;
+	margin:0 auto;
+	background:#fff;
+}
+
+#header {
+	background: url("../images/bg-header.jpg") no-repeat scroll center top transparent;
+	height: 154px;
+	margin: 0;
+	margin-bottom: 28px;
+	padding: 0;
+	width: 960px; /* width of background image */
+}
+
+#header h1 {
+	margin:0;
+	height: 61px;
+}
+
+#navbar {
+	background: url("../images/bg-menu.gif") repeat-x scroll center top transparent;
+	height: 28px;
+	margin: 0;
+	padding: .4em;
+}
+
+#navbar ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#navbar li {
+	display:inline;
+	margin:0;
+	padding: 5px 10px; /* Top right */
+}
+
+#navbar a{	
+	color: #ffffff;
+}
+
+#navbar a:hover{
+	background-color:#6D86B7;
+}
+
+#rightcol {
+	float:left;
+	/*width:480px;*/
+	padding:10px;
+	background:#FAF0E6;
+	width: 750px;
+}
+
+#leftcol {
+	float:left;
+	width:154px;
+	height: 25em;
+	padding:10px;
+	background: #FAF0E6;
+	overflow: auto;
+}
+
+
+#dynamiccontent{
+	overflow: auto;
+	height: 25em;
+}
+
+
+#leftcol ul li{
+	background: none repeat scroll 0 0 #E6E6A1;
+	border-bottom: 1px solid #EFEFD1;
+	color: #976A14;
+	list-style: none outside none;
+}
+
+#leftcol li a {
+	color: #976A14;
+	display: block;
+	font-size: 12px;
+	padding: 6px 6px 6px 6px;
+	text-decoration: none;
+}
+
+#leftcol li a:hover {
+	color: #710000;
+	border-top: 1px solid #710000;
+	border-bottom: 1px solid #710000;
+	padding: 5px 6px 5px 6px;
+}
+.open li a:active, .current {
+    font-weight: bold;
+}
+
+#footer {
+	clear:both;
+	padding:5px 10px;
+	background:#cc9;
+}
+
+#footer p {
+	margin:0;
+}
+
+* html #footer {
+	height:1px;
+}
+
+/* end items contained in header */
+
+/* form elements */
+#hostform{ 
+	
+}
+
+
+#hostform p{
+	padding: 1em 0 .5em 0;
+}
+
+#contact, #region, #acc, #miscoptions{
+	padding: .5em;
+}
+
+#contact fieldset.left, #contact fieldset.right{
+	margin-top: 0;
+	padding: 0 1em 1em 1em;
+	border: 0;
+}
+
+
+#hostform label{ 
+	display: block;
+}
+
+#hostform label{ 
+	padding-top: 1em;
+}
+#firstname, #firstname2, #lastname, #lastname2{
+	width: 20em;
+}
+
+#streetaddr, #town {
+	width: 25em;
+}
+
+#email, #altemail {
+	width: 25em;
+}
+#zip{
+	width: 14em;
+}
+
+#max, #rooms, #singlebeds, #doublebeds{
+	width: 20em;
+}
+#miscoptions .right, #miscoptions .left{
+border: 0;
+padding-right: 2em;
+padding-bottom: 2em;
+}
+#miscoptions .left{
+float: left;
+}
+#region .subleft{
+float: left;
+}
+#region .subright{
+}
+
+#region .subleft, #region .subright{
+	padding-top: 0;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	border: 0;
+}
+
+span.red{ 
+	color: red;
+}
+
+#contact .left{
+float: left;
+}
+
+.green{
+	color: yellow;
+	background-color: green;
+}
+
+table#info{ 
+	border-collapse:collapse;
+	border: 1px solid #808080;
+	float: left;
+	margin-right: 2em;
+	width: 450px;
+	overflow: scroll;
+}
+
+table#info th, table#hostInfo td{ 
+	border: 1px dashed #808080;
+}
+
+table#info th{
+	text-align: right;
+	padding: .5em;
+}
+
+table#info td{
+	padding-left: .5em;
+}
+
+table#info .alt{
+	background-color: #E6E6A1;
+}
+
+table#metaData{ 
+	border-collapse:collapse;
+	border: 1px solid #808080;
+	float: left;
+	margin-right: 2em;
+	overflow: scroll;
+}
+
+table#metaData th, table#hostMetaData td{ 
+	border: 1px dashed #808080;
+}
+
+table#metaData th{
+	background-color: #D5D5B0;
+	text-align: center;
+	padding: .5em;
+}
+
+table#metaData td{
+	padding-left: .5em;
+}
+
+table#metaData .alt{
+	background-color: #E6E6A1;
+}

@@ -1,0 +1,217 @@
+#wrapper{
+	width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+	 background: #831F21;
+}
+
+/*#acc{
+	display: inline;
+	width: 50%;
+	height: 152px;
+	float: right;
+}*/
+
+
+#content{
+	height: 350px;
+}
+
+#contact .right{
+	width: 40%;
+}
+
+#dynamicontent{
+	width: 1024px;
+}
+
+#errorlist{
+	list-style-type: disc;
+	font-size: 14pt;
+	text-transform: uppercase;
+	color: red;
+}
+
+#header{
+	min-height: 80px;
+	background: #831F21;
+	overflow: auto;
+}
+
+#header h1{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#main{
+	background: white;
+	overflow: auto;
+}
+
+#rightcol{
+	width: 794px;
+	float: right;
+}
+
+#leftcol{
+	width: 230px;
+	float: left;
+	height: 300px;
+	overflow: scroll;
+}
+
+#navbar{
+	height: 30px;
+	background: #831F21;
+}
+
+#navlist{
+	margin-top: 0px;
+}
+
+
+#navbar ul li{
+	list-style-type: none;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+	float: right;
+	border-style: solid;
+	border-width: 1px;
+	border-right-color: #B8B8B8;
+	border-top-color: #B8B8B8;
+	border-left-color: #B8B8B8;
+	background: #B8B8B8;
+	border-bottom-color: #B8B8B8;
+}
+
+#navbar ul li.cpage{
+	background: #ffffff;
+	border-bottom-color: #ffffff;
+}
+
+#region input{
+	float: right;
+}
+
+#region input{
+	width: auto;
+}
+
+
+#recordlist{
+	padding-left: 0px;
+}
+
+#tblselect{
+	width: 98px;
+}
+
+.current{
+	background: yellow;
+}
+
+
+.left{
+	float: left;
+	display: inline;
+	width: 45%;
+	/*border-style: none;*/
+}
+
+
+
+.red{
+	color: red;
+}
+
+.right{
+	display: inline;
+	width: 45%;
+	/*border-style: none;*/
+	float: right;
+}
+
+.subleft{
+	float: left;
+	width: 39%;
+	/*border-style: none;*/
+}
+
+.subright{
+	width: 45%;
+	/*border-style: none;*/
+	float: right;
+}
+
+
+.tblcell{
+	display: block;
+	float: left;
+	font-size: 10pt;
+	width: 100px;
+	text-align: left;
+	margin-left: 20px;
+	/*margin-right: 20px;*/
+}
+
+.tblhead{
+	display: block;
+	float: left;
+	width: 80px;
+	text-align: left;
+	margin-left: 20px;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.tblname{
+	width: 150px;
+}
+
+.primary{
+	background: green;
+}
+
+.criteria{
+	background: blue;
+}
+
+.multi{
+	background: orange;
+}
+
+body{
+	background: #FAF0E6;
+	margin-top: 0px;
+}
+
+form{
+	background: #E6E6A1;
+}
+
+form fieldset{
+	border-style: none;
+}
+
+h2{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+/*label
+{
+	width: 4em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+}*/
+ul{
+	list-style-type: none;
+}
+
