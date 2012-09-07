@@ -81,7 +81,7 @@ $q = $dbEvent->selectTitles();
 $r = $dbHandler->query($q);
 $list = $dbEvent->buildList($r);
 include ('inc/head.php');
-echo '<link media="all" title="New" rel="stylesheet" type="text/css" href="css/ticket.css" />';
+echo '<link media="all" title="New" rel="stylesheet" type="text/css" href="css/reports.css" />';
         
         echo '<link media="print" title="New" rel="stylesheet" type="text/css" href="css/print.css" />';
         e
