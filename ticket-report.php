@@ -32,7 +32,7 @@ if (!isset($_GET['id'])) {
 
     if (isset($_GET['emailaddressto']) and isset($_GET['emailaddressfrom'])) {
        $textClean = $heForm->getReportClean();
-       $text = $heForm->getReportText();
+       $text = $_GET['rtext'];;
        $q = $dbEvent->setReport($_GET['id'], $textClean);
        $r = $dbHandler->query($q);
  
@@ -55,6 +55,7 @@ if (!isset($_GET['id'])) {
         echo '<link media="print" title="New" rel="stylesheet" type="text/css" href="css/print.css" />';
         echo "<div id=\"options\"><input type=\"button\" value=\"Print\" onClick=\"window.print()\" /><br><BR>";
 echo "<form name=\"input\" action=\"ticket-report.php\" method=\"get\">";
+echo "<input type=\"hidden\" name='rtext' id='rtext' value=\"$text\">";
         echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"";
 echo $_GET['id'];
 echo "\" />";
