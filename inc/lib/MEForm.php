@@ -559,30 +559,20 @@ class MEForm extends Form{
 		$v = array_count_values($hosts);
 
 		echo '<p>'.print_r($hosts).'</p>';
-
 		echo '<p>'.print_r($v).'</p>';
-
 		echo '<p>'.print_r($data).'</p>';
 
 		$count  = count($hosts);
 
 		$table = "\n".'<table border="1">'."\n\t".
-
 					'<tr>'."\n\t\t".
-
 						'<th>Musician(s)</th>'."\n\t\t".
-
 						'<th>Host</th>'."\n\t\t".
-
 						'<th>Phone Number</th>'."\n\t\t".
-
 						'<th>Address</th>'."\n\t".
-
 					'</tr>'."\n";
 
 		for($i=0;$i<$count;$i++){
-
-			//echo print_r($data[$i]);
 
 			if($data[$i]['h_firstName2'] != ''){
 
@@ -601,17 +591,13 @@ class MEForm extends Form{
 					$host = $data[$i]['h_firstName'].' and '.$data[$i]['h_firstName2'].' '.$data[$i]['h_lastName'];
 
 				}
-
 			}
 
 			else{
-
 				$host = $data[$i]['h_firstName'].' '.$data[$i]['h_lastName'];
-
 			}			
 
 			$table .= "\t".'<tr>'."\n\t\t".
-
 					'<td>'.$data[$i]['m_firstName'].' '.$data[$i]['m_lastName'];
 
 			//what a PITA
@@ -619,8 +605,6 @@ class MEForm extends Form{
 			if($v[$data[$i]['me_hostID']] > 1){
 
 				$skip = ($v[$data[$i]['me_hostID']]);
-
-				//echo '<p>Dupe: '.$dupe.'</p>';
 
 				for($k=$i+1;$k<$i+$skip;$k++){
 
@@ -633,96 +617,27 @@ class MEForm extends Form{
 			}
 
 			$table .= '</td>'."\n\t\t".
-
 				'<td>'.$host.'</td>'."\n\t\t".
-
 				'<td>'.$data[$i]['h_homePhone'].'</td>'."\n\t\t".
-
 				'<td>'.$data[$i]['h_streetAddr'].', '.$data[$i]['h_town'].'</td>'."\n\t\t".
 
 				'</tr>'."\n";
-
 		}
 
 		$table .= '</table>'."\n";
 
 		return $table;
-
 	}
-
-	// BK
-	function makeReportTable1($data){
-
-		$table = "\n".'<table border="0" style="font-size:12pt;margin-left:auto;margin-right:auto;">'."\n\t".
-
-			'<tr style="text-align:left;font-weight:bold;">'."\n\t\t".
-
-			'<th style="min-width:150px;">Musician</th>'."\n\t\t".
-
-			'<th style="min-width:150px;">Host</th>'."\n\t\t".
-
-			'<th style="min-width:150px;"Active</th>'."\n\t\t".
-
-			'<th style="min-width:150px;">Free Tix</th>'."\n\t".
-
-			'</tr>'."\n";
-
-		foreach($data as $row){
-
-			if($row['h_firstName2'] != ''){
-
-			   if($row['h_lastName2'] != ''){
-
-			      //echo 'check';
- 	           		$host = $row['h_firstName'].' '.$row['h_lastName'].' and '.$row['h_firstName2'].' '.$row['h_lastName2'];
-
-				//echo $host;
-			}
-			else{
-				$host = $row['h_firstName'].' and '.$row['h_firstName2'].' '.$row['h_lastName'];
-
-				}
-
-			}
-
-			else{
-
-				$host = $row['h_firstName'].' '.$row['h_lastName'];
-
-			}
-
-			$table .= "\t".'<tr>'."\n\t\t".
-
-			'<td>'.$row['m_firstName'].' '.$row['m_lastName'].'</td>'."\n\t\t".
-			'<td>'.$host.'</td>'."\n\t\t".
-			'<td>'.$row['h_phone'].'</td>'."\n\t\t".
-			'<td>'.$row['h_streetAddr'].', '.$row['h_town'].'</td>'."\n\t\t".
-			'</tr>'."\n";
-		}
-
-		$table .= '</table>'."\n";
-
-		return $table;
-
-	}
-
-	
-
 
 	function makeReportTable($data){
 
-		$table = "\n".'<table border="0" style="font-size:12pt;margin-left:auto;margin-right:auto;">'."\n\t".
+		$table = "\n".'<table class="report">'."\n\t".
 
 					'<tr style="text-align:left;font-weight:bold;">'."\n\t\t".
-
 						'<th style="min-width:150px;">Musician</th>'."\n\t\t".
-
 						'<th style="min-width:150px;">Host</th>'."\n\t\t".
-
 						'<th style="min-width:150px;">Phone Number</th>'."\n\t\t".
-
 						'<th style="min-width:150px;">Address</th>'."\n\t".
-
 					'</tr>'."\n";
 
 		foreach($data as $row){
@@ -732,48 +647,31 @@ class MEForm extends Form{
 				if($row['h_lastName2'] != ''){
 
 					//echo 'check';
-
 					$host = $row['h_firstName'].' '.$row['h_lastName'].' and '.$row['h_firstName2'].' '.$row['h_lastName2'];
-
-					//echo $host;
 
 				}
 
 				else{
-
 					$host = $row['h_firstName'].' and '.$row['h_firstName2'].' '.$row['h_lastName'];
-
 				}
-
 			}
 
 			else{
-
 				$host = $row['h_firstName'].' '.$row['h_lastName'];
-
 			}
 
 			$table .= "\t".'<tr>'."\n\t\t".
-
 			'<td>'.$row['m_firstName'].' '.$row['m_lastName'].'</td>'."\n\t\t".
-
 				'<td>'.$host.'</td>'."\n\t\t".
-
 				'<td>'.$row['h_phone'].'</td>'."\n\t\t".
-
 				'<td>'.$row['h_streetAddr'].', '.$row['h_town'].'</td>'."\n\t\t".
-
 				'</tr>'."\n";
-
 		}
 
 		$table .= '</table>'."\n";
 
 		return $table;
-
 	}
-
-	
 
 	function makeReportForm(){
 
@@ -806,6 +704,9 @@ class MEForm extends Form{
 		'<p style="font-size:12pt;margin-left:auto;margin-right:auto;width:700px;">'.nl2br($this->stripChars($text)).'</p>'.
 
 		$this->makeReportTable($data);
+	        $html .= '<br>';
+                $html .= date('m/d/Y h:i:s a', time());
+                $html .= '</div>';
 
 		return $html;
 
