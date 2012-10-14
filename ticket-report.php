@@ -31,11 +31,7 @@ if (!isset($_GET['id'])) {
     $heForm->hostList = $heDatabase->getNameArray($r);
 
     if (isset($_GET['emailaddressto']) and isset($_GET['emailaddressfrom'])) {
-       $textClean = $heForm->getReportClean();
        $text = $_GET['rtext'];;
-       $q = $dbEvent->setReport($_GET['id'], $textClean);
-       $r = $dbHandler->query($q);
- 
        $export = "<html><body>";
        $export .= $heForm->exportReport($title, $text, $data);
        $export .= "</body></html>";

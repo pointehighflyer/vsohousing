@@ -24,11 +24,18 @@ else{
 	$data = $meDatabase->getData($r);
 
     if (isset($_GET['emailaddressto']) and isset($_GET['emailaddressfrom'])) {
-       $textClean = $meForm->getReportClean();
-       $text = $_GET['rtext'];;
-       $q = $dbEvent->setReport($_GET['id'], $textClean);
-       $r = $dbHandler->query($q);
 
+       //make the list
+       $q = $dbEvent->selectTitles();
+       $r = $dbHandler->query($q);
+       if(isset($_GET['id'])){
+          if(mysql_data_seek($r,0)){
+            $arr = $dbEvent->getTitles($r);
+            $title = array_search($_GET['id'],$arr);
+          }
+       }
+
+       $text = $_GET['rtext'];;
        $export = "<html><body>";
        $export .= $meForm->exportReport($title, $text, $data);
        $export .= "</body></html>";
