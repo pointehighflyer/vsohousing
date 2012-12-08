@@ -50,11 +50,11 @@ if (!isset($_GET['id'])) {
         
         echo '<link media="print" title="New" rel="stylesheet" type="text/css" href="css/print.css" />';
         echo "<div id=\"options\"><input type=\"button\" value=\"Print\" onClick=\"window.print()\" /><br><BR>";
-echo "<form name=\"input\" action=\"ticket-report.php\" method=\"get\">";
-echo "<input type=\"hidden\" name='rtext' id='rtext' value=\"$text\">";
+        echo "<form name=\"input\" action=\"ticket-report.php\" method=\"get\">";
+        echo "<input type=\"hidden\" name='rtext' id='rtext' value=\"$text\">";
         echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"";
-echo $_GET['id'];
-echo "\" />";
+        echo $_GET['id'];
+        echo "\" />";
 
         echo "<table> <tr > <td>To</td> <td><input type=\"text\" name=\"emailaddressto\" /> </td></tr></div>";
         echo "<tr><td>From</td><td> <input type=\"text\" name=\"emailaddressfrom\" /></td></tr></table>";
