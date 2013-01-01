@@ -104,6 +104,13 @@ class Host{
 		$q = 'SELECT pkHostID, fldFirstName, fldLastName FROM tblHost WHERE fldIsActive=1 ORDER BY fldLastName ASC, fldFirstName ASC';
 		return $q;
 	}
+
+
+	function selectCity(){
+		$q = 'SELECT pkHostID, fldFirstName, fldLastName FROM tblHost WHERE fldIsActive=1 AND fldTown="Shelburne" ORDER BY fldLastName ASC, fldFirstName ASC';
+		return $q;
+	}
+	
 	
 	function add(){
 		$query = 'INSERT INTO tblHost SET '.$this->fields();
