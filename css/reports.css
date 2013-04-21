@@ -6,6 +6,7 @@ empty-cells: show;
     border-color: black;
     border-width: 0 0 1px 1px;
     border-style: solid;
+    font-size: 12px;
 }
 
 table.report td, th
@@ -14,6 +15,5 @@ table.report td, th
     border-width: 1px 1px 0 0;
     border-style: solid;
     margin: 0;
-    padding: 4px;
 }
 

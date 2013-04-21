@@ -59,7 +59,7 @@ class Musician{ //implements DBInterface{
 						'm.fldInstrument AS fldInstrument, '.
 						'm.fldTown AS fldTown, '.
 						'm.fldState AS fldState, '.
-						'm.fldSmokes AS fldSmoke, '.
+						'm.fldSmokes AS fldSmokes, '.
 						'm.fldSmokingAllowed AS fldSmokingAllowed, '.
 						'm.fldAllergy AS fldAllergy, '.
 						'm.fldAllrgCats AS fldAllrgCats, '.

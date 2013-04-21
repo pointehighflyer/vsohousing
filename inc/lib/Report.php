@@ -22,9 +22,22 @@ class Report {
         echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"";
 	echo $id;
 	echo "\" />";
-        echo "<table> <tr > <td>To</td> <td><input type=\"text\" name=\"emailaddressto\" /> </td></tr></div>";
+        echo "<table> <tr> <td>To</td> <td><input type=\"text\" name=\"emailaddressto\" /> </td></tr>";
         echo "<tr><td>From</td><td> <input type=\"text\" name=\"emailaddressfrom\" /></td></tr></table>";
-        echo "<input type=\"submit\" value=\"Email\"></form></div>";   
+        echo "<table><tr><td><input type=\"submit\" value=\"Email\"> </form></td></tr>";   
+    
+	echo "<tr><td></br><form name=\"input\" action=\"$report\" method=\"get\">";
+       
+       
+	echo "<input type=\"hidden\" name='options' id='options' value='excel'>";
+	echo "<input type=\"hidden\" name='rtext' id='rtext' value=\"$text\">";
+ echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"";
+	echo $id;
+	echo "\" />";
+        echo "<input type=\"submit\" value=\"Excel\"> </form>";   
+
+	echo "</td></tr></table></div>";
     }
+
   } 
 ?>

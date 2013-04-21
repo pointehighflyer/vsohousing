@@ -1,6 +1,5 @@
 <?php
-
-
+require_once "ExcelExport.php";
 
 class MEForm extends Form{
 
@@ -634,10 +633,10 @@ class MEForm extends Form{
 		$table = "\n".'<table class="report">'."\n\t".
 
 					'<tr style="text-align:left;font-weight:bold;">'."\n\t\t".
-						'<th style="min-width:150px;">Musician</th>'."\n\t\t".
-						'<th style="min-width:150px;">Host</th>'."\n\t\t".
-						'<th style="min-width:150px;">Phone Number</th>'."\n\t\t".
-						'<th style="min-width:150px;">Address</th>'."\n\t".
+						'<th>Musician</th>'."\n\t\t".
+						'<th>Host</th>'."\n\t\t".
+						'<th>Phone Number</th>'."\n\t\t".
+						'<th>Address</th>'."\n\t".
 					'</tr>'."\n";
 
 		foreach($data as $row){
@@ -691,12 +690,7 @@ class MEForm extends Form{
 
 	}
 
-
-
-	
-
 	function exportReport($title,$text,$data){
-
 		$html = '<h1 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">VSO Musician Housing</h1>'.
 
 		'<h2 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">'.$title.'</h2>'.
@@ -709,27 +703,35 @@ class MEForm extends Form{
                 $html .= '</div>';
 
 		return $html;
-
 	}
 
-	
+	function exportExcel($title,$text,$data){
+$xls = new ExcelExport();
 
-	function parseDate($date){
+$xls->addRow(Array("Musician","Host","Phone Number", "Address"));
+		foreach($data as $row){
+			if($row['h_firstName2'] != ''){
+			   if($row['h_lastName2'] != ''){
+				$host = $row['h_firstName'].' '.$row['h_lastName'].' and '.$row['h_firstName2'].' '.$row['h_lastName2'];
+				}
+				else{
+					$host = $row['h_firstName'].' and '.$row['h_firstName2'].' '.$row['h_lastName'];
+				}
+			}
 
-		$parse = explode('-',$date);
+			else{
+				$host = $row['h_firstName'].' '.$row['h_lastName'];
+			}
+$xls->addRow(Array($row['m_firstName']. ' '.$row['m_lastName'],$host,$row['h_phone'],$row['h_streetAddr'].', '.$row['h_town']));
 
-		return $parse[1].'/'.$parse[2].'/'.$parse[0];
+                }
 
-	}	
-
-	
-
-
-
-
-
-
-
+$xls->download("vso-housing.xls");
 }
 
+function parseDate($date){
+		$parse = explode('-',$date);
+		return $parse[1].'/'.$parse[2].'/'.$parse[0];
+	}	
+}
 ?>
