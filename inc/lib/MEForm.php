@@ -1,5 +1,4 @@
 <?php
-require_once "ExcelExport.php";
 
 class MEForm extends Form{
 
@@ -691,11 +690,9 @@ class MEForm extends Form{
 	}
 
 	function exportReport($title,$text,$data){
-		$html = '<h1 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">VSO Musician Housing</h1>'.
-
-		'<h2 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">'.$title.'</h2>'.
-
-		'<p style="font-size:12pt;margin-left:auto;margin-right:auto;width:700px;">'.nl2br($this->stripChars($text)).'</p>'.
+		$html = '<h1 style="text-align:center;font-size:10pt;font-weight:bold;text-decoration:underline;">VSO Musician Housing</h1>'.
+		'<h2 style="text-align:center;font-size:10pt;font-weight:bold;text-decoration:underline;">'.$title.'</h2>'.
+		'<p style="font-size:8pt;margin-left:auto;margin-right:auto;width:700px;">'.nl2br($this->stripChars($text)).'</p>'.
 
 		$this->makeReportTable($data);
 	        $html .= '<br>';
@@ -704,30 +701,6 @@ class MEForm extends Form{
 
 		return $html;
 	}
-
-	function exportExcel($title,$text,$data){
-$xls = new ExcelExport();
-
-$xls->addRow(Array("Musician","Host","Phone Number", "Address"));
-		foreach($data as $row){
-			if($row['h_firstName2'] != ''){
-			   if($row['h_lastName2'] != ''){
-				$host = $row['h_firstName'].' '.$row['h_lastName'].' and '.$row['h_firstName2'].' '.$row['h_lastName2'];
-				}
-				else{
-					$host = $row['h_firstName'].' and '.$row['h_firstName2'].' '.$row['h_lastName'];
-				}
-			}
-
-			else{
-				$host = $row['h_firstName'].' '.$row['h_lastName'];
-			}
-$xls->addRow(Array($row['m_firstName']. ' '.$row['m_lastName'],$host,$row['h_phone'],$row['h_streetAddr'].', '.$row['h_town']));
-
-                }
-
-$xls->download("vso-housing.xls");
-}
 
 function parseDate($date){
 		$parse = explode('-',$date);
