@@ -1,7 +1,5 @@
 <?php
 
-
-
 class MEForm extends Form{
 
 	var $type = 'MEForm';
@@ -634,10 +632,10 @@ class MEForm extends Form{
 		$table = "\n".'<table class="report">'."\n\t".
 
 					'<tr style="text-align:left;font-weight:bold;">'."\n\t\t".
-						'<th style="min-width:150px;">Musician</th>'."\n\t\t".
-						'<th style="min-width:150px;">Host</th>'."\n\t\t".
-						'<th style="min-width:150px;">Phone Number</th>'."\n\t\t".
-						'<th style="min-width:150px;">Address</th>'."\n\t".
+						'<th>Musician</th>'."\n\t\t".
+						'<th>Host</th>'."\n\t\t".
+						'<th>Phone Number</th>'."\n\t\t".
+						'<th>Address</th>'."\n\t".
 					'</tr>'."\n";
 
 		foreach($data as $row){
@@ -691,17 +689,10 @@ class MEForm extends Form{
 
 	}
 
-
-
-	
-
 	function exportReport($title,$text,$data){
-
-		$html = '<h1 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">VSO Musician Housing</h1>'.
-
-		'<h2 style="text-align:center;font-size:12pt;font-weight:bold;text-decoration:underline;">'.$title.'</h2>'.
-
-		'<p style="font-size:12pt;margin-left:auto;margin-right:auto;width:700px;">'.nl2br($this->stripChars($text)).'</p>'.
+		$html = '<h1 style="text-align:center;font-size:10pt;font-weight:bold;text-decoration:underline;">VSO Musician Housing</h1>'.
+		'<h2 style="text-align:center;font-size:10pt;font-weight:bold;text-decoration:underline;">'.$title.'</h2>'.
+		'<p style="font-size:8pt;margin-left:auto;margin-right:auto;width:700px;">'.nl2br($this->stripChars($text)).'</p>'.
 
 		$this->makeReportTable($data);
 	        $html .= '<br>';
@@ -709,27 +700,11 @@ class MEForm extends Form{
                 $html .= '</div>';
 
 		return $html;
-
 	}
 
-	
-
-	function parseDate($date){
-
+function parseDate($date){
 		$parse = explode('-',$date);
-
 		return $parse[1].'/'.$parse[2].'/'.$parse[0];
-
 	}	
-
-	
-
-
-
-
-
-
-
 }
-
 ?>

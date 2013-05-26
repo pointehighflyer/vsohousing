@@ -7,6 +7,7 @@ include('inc/lib/Report.php');
 include('inc/lib/MEDatabase.php');
 include('inc/lib/DBManager.php');
 include('inc/lib/PDF.php');
+include('inc/lib/excelexport.php');
 
 $dbEvent = new Event();
 $dbHandler = new DBManager();
@@ -23,7 +24,24 @@ else{
 	$r = $dbHandler->query($q);
 	$data = $meDatabase->getData($r);
 
-    if (isset($_GET['emailaddressto']) and isset($_GET['emailaddressfrom'])) {
+
+	if ($_GET['options']=='excel' ){
+        
+        //make the list
+        $q = $dbEvent->selectTitles();
+        $r = $dbHandler->query($q);
+        if(isset($_GET['id'])){
+          if(mysql_data_seek($r,0)){
+            $arr = $dbEvent->getTitles($r);
+            $title = array_search($_GET['id'],$arr);
+          }
+	}
+       $text = $_GET['rtext'];
+       $meForm->exportExcel($title, $text, $data);
+
+       }
+
+       else if ( $_GET['emailaddressto'] != '' and $_GET['emailaddressfrom'] != '') {
 
        //make the list
        $q = $dbEvent->selectTitles();
