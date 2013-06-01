@@ -6,7 +6,6 @@
 		<meta name="author" content="Evan Yandell"/>
 		<meta name="description" content="VSO Musician Housing Program"/>
 		<link media="all" title="New" rel="stylesheet" type="text/css" href="css/main.css" />
-		<link rel="stylesheet" title="Old" type="text/css" href="styles.css" />
 		<script type="text/javascript">
 			//<!--
 			
