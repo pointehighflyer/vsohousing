@@ -19,7 +19,7 @@ Have a bug or a feature request? [Please open a new issue](https://github.com/bi
 
 
 
-Please submit all pull requests against *master branches.
+Please submit all pull requests against master branche.
 
 Thanks!
 
