@@ -1,6 +1,6 @@
 <h2> VSO Housing </h2>
 
-VSO Housing is a web interface for managing a housing assignments by [Bill Keys](http://twitter.com/bk_keys).
+VSO Housing is a web interface for managing a housing assignments.
 
 ## Requirements
    <li>PHP 5.3.3 or greater</li>
@@ -10,7 +10,7 @@ VSO Housing is a web interface for managing a housing assignments by [Bill Keys]
 
 Three quick start options are available:
 
-* Clone the repo: `git clone git://github.com/billkeys/vsohousingt`.
+* Clone the repo: `git clone git://github.com/billkeys/vsohousing`.
 
 ## Bug tracker
 
