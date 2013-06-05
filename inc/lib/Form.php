@@ -74,60 +74,11 @@ class Form{
 		$this->monthList['November'] = '11';
 		$this->monthList['December'] = '12';
 		$this->yearList['Year'] = '0000';
+
+		/* $this->yearList['2018'] = '2018';*/
 		for ($i=intval(date('Y',strtotime('+4 years')));$i>1969;$i--){
 			$this->yearList[strval($i)] = strval($i);
 		}
-		/*$this->yearList['2020'] = '2020';
-		$this->yearList['2019'] = '2019';
-		$this->yearList['2018'] = '2018';
-		$this->yearList['2017'] = '2017';
-		$this->yearList['2016'] = '2016';
-		$this->yearList['2015'] = '2015';
-		$this->yearList['2014'] = '2014';
-		$this->yearList['2013'] = '2013';
-		$this->yearList['2012'] = '2012';
-		$this->yearList['2011'] = '2011';
-		$this->yearList['2010'] = '2010';
-		$this->yearList['2009'] = '2009';
-		$this->yearList['2008'] = '2008';
-		$this->yearList['2007'] = '2007';
-		$this->yearList['2006'] = '2006';
-		$this->yearList['2005'] = '2005';
-		$this->yearList['2004'] = '2004';
-		$this->yearList['2003'] = '2003';
-		$this->yearList['2002'] = '2002';
-		$this->yearList['2001'] = '2001';
-		$this->yearList['2000'] = '2000';
-		$this->yearList['1999'] = '1999';
-		$this->yearList['1998'] = '1998';
-		$this->yearList['1997'] = '1997';
-		$this->yearList['1996'] = '1996';
-		$this->yearList['1995'] = '1995';
-		$this->yearList['1994'] = '1994';
-		$this->yearList['1993'] = '1993';
-		$this->yearList['1992'] = '1992';
-		$this->yearList['1991'] = '1991';
-		$this->yearList['1990'] = '1990';
-		$this->yearList['1989'] = '1989';
-		$this->yearList['1988'] = '1988';
-		$this->yearList['1987'] = '1987';
-		$this->yearList['1986'] = '1986';
-		$this->yearList['1985'] = '1985';
-		$this->yearList['1984'] = '1984';
-		$this->yearList['1983'] = '1983';
-		$this->yearList['1982'] = '1982';
-		$this->yearList['1981'] = '1981';
-		$this->yearList['1980'] = '1980';
-		$this->yearList['1979'] = '1979';
-		$this->yearList['1978'] = '1978';
-		$this->yearList['1977'] = '1977';
-		$this->yearList['1976'] = '1976';
-		$this->yearList['1975'] = '1975';
-		$this->yearList['1974'] = '1974';
-		$this->yearList['1973'] = '1973';
-		$this->yearList['1972'] = '1972';
-		$this->yearList['1971'] = '1971';
-		$this->yearList['1970'] = '1970';*/
 	} 
 	
 	//gets the integer equivalent of the specified field

@@ -6,8 +6,7 @@ include('inc/lib/MEForm.php');
 include('inc/lib/Report.php');
 include('inc/lib/MEDatabase.php');
 include('inc/lib/DBManager.php');
-include('inc/lib/PDF.php');
-include('inc/lib/excelexport.php');
+include('inc/lib/html2pdf/html2pdf.class.php');
 
 $dbEvent = new Event();
 $dbHandler = new DBManager();
@@ -24,21 +23,38 @@ else{
 	$r = $dbHandler->query($q);
 	$data = $meDatabase->getData($r);
 
+        if (isset($_GET['excel'])) {
+           //make the list
+           $q = $dbEvent->selectTitles();
+           $r = $dbHandler->query($q);
+          
+           if(isset($_GET['id'])){
+             if(mysql_data_seek($r,0)){
+               $arr = $dbEvent->getTitles($r);
+               $title = array_search($_GET['id'],$arr);
+             }
+	  }
+          $text = $_GET['rtext'];
+          $meForm->exportExcel($title, $text, $data);
+       }
 
-	if ($_GET['options']=='excel' ){
-        
-        //make the list
-        $q = $dbEvent->selectTitles();
-        $r = $dbHandler->query($q);
-        if(isset($_GET['id'])){
-          if(mysql_data_seek($r,0)){
-            $arr = $dbEvent->getTitles($r);
-            $title = array_search($_GET['id'],$arr);
-          }
-	}
-       $text = $_GET['rtext'];
-       $meForm->exportExcel($title, $text, $data);
+       else if ($_GET['pdf']){
+   	 //make the list
+       	 $q = $dbEvent->selectTitles();
+       	 $r = $dbHandler->query($q);
+         if(isset($_GET['id'])){
+            if(mysql_data_seek($r,0)){
+              $arr = $dbEvent->getTitles($r);
+              $title = array_search($_GET['id'],$arr);
+            }
+         }
 
+         $text = $_GET['rtext'];
+         $export = $meForm->exportReport($title, $text, $data);
+
+         $html2pdf = new HTML2PDF('P','A4','fr');
+         $html2pdf->WriteHTML($export);
+         $html2pdf->Output('housing-report.pdf'); 
        }
 
        else if ( $_GET['emailaddressto'] != '' and $_GET['emailaddressfrom'] != '') {
@@ -53,13 +69,15 @@ else{
           }
        }
 
-       $text = $_GET['rtext'];;
+       $text = $_GET['rtext'];
        $export = "<html><body>";
        $export .= $meForm->exportReport($title, $text, $data);
        $export .= "</body></html>";
        $export = str_replace('\\', '', $export);
+         $html2pdf = new HTML2PDF('P','A4','fr');
+         $html2pdf->WriteHTML($export);
 
-       $report->sendTo($_GET['emailaddressto'], $_GET['emailaddressfrom'],"Housing Report", $export);
+       $report->sendToAttach($_GET['emailaddressto'], $_GET['emailaddressfrom'],"Housing Report", $export, $html2pdf->Output('', true));
        die();
     }
 

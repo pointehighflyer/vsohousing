@@ -1,4 +1,7 @@
 <?php
+
+include('pjmail/pjmail.class.php');
+
 class Report {
     function sendTo($to,$from, $subject, $body) {
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -11,6 +14,18 @@ class Report {
         } else {
             echo ("<p>Message delivery failed...</p>");
         }
+    }
+
+    function sendToAttach($to,$from, $subject, $body,$content_PDF) {
+       $mail = new PJmail(); 
+       $mail->setAllFrom($from, "VSO Housing"); 
+       $mail->addrecipient($to); 
+       $mail->addsubject($subject); 
+       $mail->text = "Please see attached housing report"; 
+       $mail->addbinattachement("housing-report.pdf.pdf", $content_PDF); 
+       $res = $mail->sendmail();    
+       echo ("<p>Message successfully sent! <a href='report.php'>Back</a> </p>");
+ 
     }
     
     function optionsHeader($id,$text,$report) {
@@ -34,7 +49,8 @@ class Report {
  echo "<input type=\"hidden\" name=\"id\" id=\"id\" value=\"";
 	echo $id;
 	echo "\" />";
-        echo "<input type=\"submit\" value=\"Excel\"> </form>";   
+        echo "<input type=\"submit\" value=\"Excel\" name='excel'> </form>";   
+        echo "<input type=\"submit\" value=\"PDF\" name='pdf'> </form>";   
 
 	echo "</td></tr></table></div>";
     }
