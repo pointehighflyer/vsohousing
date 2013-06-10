@@ -104,7 +104,7 @@ class Musician{ //implements DBInterface{
 		$list = '<ul id="recordlist">';
 		$data = mysql_fetch_assoc($r);
 		while($data){
-			$list .= '<li class="record"><a href="'.$_SERVER['PHP_SELF'].'?id='.$data['pkMusicianID'].'" name = "'.$data['pkMusicianID'].'">'.
+			$list .= '<li class="record"><a href="'.$_SERVER['PHP_SELF'].'?id='.$data['pkMusicianID'].'#'.$data['pkMusicianID'].'" name = "'.$data['pkMusicianID'].'" id="'.$data['pkMusicianID'].'">'.
 			$data['fldLastName'].', '.$data['fldFirstName'].'</a></li>';
 			$data = mysql_fetch_assoc($r);
 		}
@@ -189,7 +189,7 @@ class Musician{ //implements DBInterface{
 		$data = mysql_fetch_assoc($r);
 		while($data){
 			//echo $data['fldFirstName'],$data['fldLastName'],$data['pkHostID'];
-			$arr[$data['fldFirstName'].' '.$data['fldLastName']] = $data['pkMusicianID'];
+			$arr[$data['fldLastName'].', '.$data['fldFirstName']] = $data['pkMusicianID'];
 			$data = mysql_fetch_assoc($r);
 		}
 		//print_r($arr);
