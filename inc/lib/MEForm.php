@@ -353,7 +353,23 @@ class MEForm extends Form{
 
 			}
 
-			$form .= '<tr>'."\n".
+			$form .= '<tr';
+			if($row['me_status']=='Host Accepted'){
+					$form .= ' class="green2" ';
+			}
+			else if($row['me_status']=='Suggested Host'){
+					$form .= ' class="yellow" ';
+			}
+			else if($row['me_status']=='Reviewed by Planner'){
+					$form .= ' class="orange" ';
+			}
+			else if($row['me_status']=='Host Contacted'){
+					$form .= ' class="blue" ';
+			}
+			else if($row['me_status']=='Host Declined'){
+					$form .= ' class="red" ';
+			}
+			$form .='>'."\n".
 
 					'<td>'."\n".
 
@@ -733,4 +749,5 @@ function parseDate($date){
 		return $parse[1].'/'.$parse[2].'/'.$parse[0];
 	}	
 }
+
 ?>

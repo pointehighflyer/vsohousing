@@ -406,9 +406,9 @@ class EventForm extends Form{
 
 				'<br/>'."\n".
 
-				/*'Status: '.$this->makeListS('status',$this->statusList,$this->status)."\n".
+				/*'Status: '.$this->makeListS('status',$this->statusList,$this->status)."\n".//<---here!
 
-				'<br/>'."\n".*/
+				'<br/>'."\n". */
 
 				'Notes'."\n". 
 

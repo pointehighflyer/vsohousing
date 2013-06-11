@@ -8,8 +8,6 @@ class Event{
 
 	var $type = 'Event';
 
-	
-
 	//fields	
 
 	var $eventID;
@@ -58,7 +56,7 @@ class Event{
 
 				'fldZip="'.$this->zip.'", '.
 
-				'fldStatus="'.$this->status.'", '.
+				/*'fldStatus="'.$this->status.'", '.*/
 
 				'fldNotes="'.$this->notes.'"';
 
@@ -178,7 +176,7 @@ class Event{
 
 	function buildList($r){
 
-	$list = '<ul id="recordlist">';
+		$list = '<ul id="recordlist">';
 
 		$data = mysql_fetch_assoc($r);
 

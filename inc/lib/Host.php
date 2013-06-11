@@ -177,6 +177,7 @@ class Host{
 		return $query;
 
 	}
+
 	
 
 	//selects the specified record from the database

@@ -277,3 +277,26 @@ table#metaData td{
 table#metaData .alt{
 	background-color: #E6E6A1;
 }
+/*backgrounds for event planner entries*/
+.yellow{
+		background-color:#FFF844;
+}
+.orange{
+		background-color:#FFBF37;
+}
+.blue{
+		background-color:#4040FF;
+}
+.blue td{
+		color: #FFF;
+}
+.green2{
+		background-color:#49FF49;
+}
+.red{
+		background-color:#FF3636;
+}
+/*active link from the sidebar list*/
+.active a{
+		background-color: #FFF;
+}
