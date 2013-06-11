@@ -30,6 +30,8 @@ $heDatabase = new HEDatabase();
 
 $meDatabase = new MEDatabase();
 
+$id = -1;
+
 
 
 //process the form
@@ -237,10 +239,6 @@ else{//form not submitted
 
 	}
 
-}
-//if no id is selected set $id to -1;
-if($id == null){
-			 $id= -1;
 }
 
 
